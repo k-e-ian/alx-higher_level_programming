@@ -7,36 +7,19 @@
  */
 int check_cycle(listint_t *list)
 {
-/*	listint_t *infront, *behind;
-*
-*	if (list == NULL || list->next == NULL)
-*		return (0);
-*
-*	behind = list->next;
-*	infront = list->next->next;
-*
-*	while (infront && behind && behind->next)
-*	{
-*		if (infront == behind)
-*			return (1);
-*		behind = behind->next;
-*		infront = infront->next->next;
-*	}
-*	return (0);
-  */
-	listint_t *head, *infront;
+	listint_t *infront, *behind;
 
-	if (list == NULL)
+	if (list == NULL || list->next == NULL)
 		return (0);
 
-	head = list->next;
+	behind = list->next;
 	infront = list->next->next;
 
-	while (infront)
+	while (infront && behind && behind->next)
 	{
-		if (head == infront)
+		if (infront == behind)
 			return (1);
-		head = head->next;
+		behind = behind->next;
 		infront = infront->next->next;
 	}
 	return (0);
