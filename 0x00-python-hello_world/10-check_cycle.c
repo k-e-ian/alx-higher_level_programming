@@ -9,7 +9,7 @@ int check_cycle(listint_t *list)
 {
 	listint_t *infront = list, *behind = list;
 
-	if (!list)
+	if (!list || !list->next)
 		return (0);
 
 	while (infront)
