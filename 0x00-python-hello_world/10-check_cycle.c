@@ -7,20 +7,22 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *infront, *behind;
+	listint_t *infront = list, *behind = list;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
 
-	behind = list->next;
-	infront = list->next->next;
+	/**
+	 * behind = list->next;
+	 * infront = list->next->next;
+	 */
 
 	while (infront && behind && behind->next)
 	{
-		if (infront == behind)
-			return (1);
 		behind = behind->next;
 		infront = infront->next->next;
+		if (infront == behind)
+			return (1);
 	}
 	return (0);
 }
