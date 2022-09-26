@@ -8,26 +8,30 @@
 int is_palindrome(listint_t **head)
 {
 	const listint_t *current;
-	int len = 0, x = 0, y = 0, tmp[9999];
+	int len, x, y, tmp[9999];
 
-	if (!*head)
+	if (*head == NULL)
 		return (1);
 	current = *head;
-	while (!current)
+	len = 0;
+	while (current != NULL)
 	{
 		current = current->next;
 		len++;
 	}
+	if (len == 1)
+		return (1);
 	current = *head;
-
-	while (!current)
+	x = 0;
+	while (current != NULL)
 	{
 		tmp[x] = current->n;
 		x++;
 		current = current->next;
 	}
-	x = x - 1;
-	len = len - 1;
+	y = 0;
+	x--;
+	len--;
 	while (x >= (len / 2))
 	{
 		if (tmp[x] != tmp[y])
