@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    score = list(a_dictionary.keys())[0]
-    big = a_dictionary[score]
+    score = ""
+    big = 0
     if a_dictionary:
         for x, y in a_dictionary.items():
             if x > big:
