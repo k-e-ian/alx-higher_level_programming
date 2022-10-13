@@ -1,11 +1,20 @@
 #!/usr/bin/python3
+'''define a class square'''
+
 
 class Square:
+    '''represent a square'''
     def __init__(self, size=0):
+        '''initialize a square
+
+        Args:
+            size (int): size of square
+        '''
         self.size = size
 
     @property
     def size(self):
+        '''get square size'''
         return (self.__size)
 
     @size.setter
@@ -17,5 +26,5 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Return the current area of the square."""
+        '''current area of the square'''
         return (self.__size * self.__size)
