@@ -1,48 +1,67 @@
 3-say_my_name.py
 ===========================
 
-This modules defines a method -say_my_name(first_name, last_name="")-.
+This modules defines a function ``say_my_name(first_name, last_name="")``.
 
 Usage
 =====
 
--say_my_name(...)- prints "My name is <first_name> <last_name>".
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
+
 ::
+
     >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("Ian", "Kitembe")
     My name is Ian Kitembe
+
 ::
-    >>> say_my_name("Ian Edwin", "Kitembe Barabara")
-    My name is Ian Edwin Kitembe Barabara
-The parameter -last_name- is not positional. If no last name is provided,
+
+    >>> say_my_name("Edwin Kitembe", "Barabara Ian")
+    My name is Edwin Kitembe Barabara Ian
+
+The parameter ```last_name``` is optional. If no last name is provided,
 an empty string is printed instead.
+
 ::
-    >>> say_my_name("Kitembe")
-    My name is Kitembe
+
+    >>> say_my_name("Ian")
+    My name is Ian 
 
 Invalid Names
 =============
 
-The parameters -first_name- and -last_name- must be strings. Otherwise,
+The parameters ``first_name`` and ``last_name``` must be strings. Otherwise,
 a TypeError is raised.
+
 ::
-    >>> say_my_name(6, "Elves")
+
+    >>> say_my_name(6, "Daniel")
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
 ::
-    >>> say_my_name("Brandon", ["Leann", "Gold", "Laura"])
+
+    >>> say_my_name("Elves", ["Leann", "Laura", "Gold"])
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
 ::
-    >>> say_my_name({"Julius": 6, "Daniel": 23}, 7.7)
+
+    >>> say_my_name({"Brandon": 6, "Waweru": 23}, 7.7)
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
 ::
+
     >>> say_my_name(None)
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
 At least one name must be provided.
+
 ::
+
     >>> say_my_name()
     Traceback (most recent call last):
     TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
