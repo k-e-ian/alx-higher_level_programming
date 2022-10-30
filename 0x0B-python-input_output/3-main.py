@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+to_json_string = __import__('3-to_json_string').to_json_string
 
-filename = "my_list.json"
 my_list = [1, 2, 3]
-save_to_json_file(my_list, filename)
+s_my_list = to_json_string(my_list)
+print(s_my_list)
+print(type(s_my_list))
 
-filename = "my_dict.json"
 my_dict = { 
     'id': 12,
     'name': "John",
@@ -16,11 +16,14 @@ my_dict = {
         'average': 3.14
     }
 }
-save_to_json_file(my_dict, filename)
+s_my_dict = to_json_string(my_dict)
+print(s_my_dict)
+print(type(s_my_dict))
 
 try:
-    filename = "my_set.json"
     my_set = { 132, 3 }
-    save_to_json_file(my_set, filename)
+    s_my_set = to_json_string(my_set)
+    print(s_my_set)
+    print(type(s_my_set))
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
