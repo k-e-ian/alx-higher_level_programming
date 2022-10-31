@@ -35,22 +35,24 @@ class Rectangle(Base):
     def width(self, value):
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
+        else:
+            if value <= 0:
+                raise ValueError("width must be > 0")
+            self.__width = value
 
     @property
     def height(self):
         '''set or get the height of the rectangle'''
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if type(value) != int:
             raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
+        else:
+            if value <= 0:
+                raise ValueError("height must be > 0")
+            self.__height = value
 
     @property
     def x(self):
@@ -61,19 +63,36 @@ class Rectangle(Base):
     def x(self, value):
         if type(value) != int:
             raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
+        else:
+            if value < 0:
+                raise ValueError("x must be >= 0")
+            self.__x = value
 
     @property
     def y(self):
         '''set or get y coordinate of the rectangle'''
-        return sel.__y
-    
+        return self.__y
+
     @y.setter
     def y(self, value):
         if type(value) != int:
             raise TpeError("y must be an integer")
-        if value < 0:
-            raise ValueError('y must be >= 0')
-        self.__y = value
+        else:
+            if value < 0:
+                raise ValueError('y must be >= 0')
+            self.__y = value
+
+    def area(self):
+        """return area of rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        '''print rectangle of hashes'''
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+        [print("") for _ in range(self.y)]
+        for _ in range(self.height):
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for i in range(self.width)]
+            print("")
