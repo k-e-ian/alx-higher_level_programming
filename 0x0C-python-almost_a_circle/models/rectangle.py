@@ -76,7 +76,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         if type(value) != int:
-            raise TpeError("y must be an integer")
+            raise TypeError("y must be an integer")
         else:
             if value < 0:
                 raise ValueError('y must be >= 0')
