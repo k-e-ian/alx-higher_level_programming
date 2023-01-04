@@ -26,4 +26,4 @@ if __name__ == "__main__":
         print(state)
 
     session.close()
-    conn.close()i
+    conn.close()
