@@ -4,7 +4,7 @@
 # whose name matches that supplied as argument.
 # Usage: ./2-my_filter_states.py <mysql username> \
 #                                <mysql password> \
-#                                <database name> \
+#                                <database name>
 #                                <state name searched>
 '''
 import sys
@@ -17,4 +17,4 @@ if __name__ == "__main__":
     c.execute("SELECT * \
                  FROM `states` \
                 WHERE BINARY `name` = '{}'".format(sys.argv[4]))
-    [print(state) for state in c.fetchall()
+    [print(state) for state in c.fetchall()]
