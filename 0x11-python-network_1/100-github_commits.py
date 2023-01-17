@@ -26,4 +26,3 @@ if __name__ == "__main__":
                                   x.get("commit").get("author").get("name")))
     else:
         print("Error code: {}".format(req.status_code))
-
