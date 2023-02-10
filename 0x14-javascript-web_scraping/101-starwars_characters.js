@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//prints all characters of a Star Wars movie
+// prints all characters of a Star Wars movie
 
 const request = require('request');
 
@@ -8,12 +8,12 @@ request(
   (error, response, body) => {
     if (error) throw error;
     else {
-      print_char(JSON.parse(body).characters, 0);
+      printChar(JSON.parse(body).characters, 0);
     }
   }
 );
 
-function print_char (person, idx) {
+function printChar (person, idx) {
   if (idx >= person.length) {
     return;
   }
@@ -21,7 +21,7 @@ function print_char (person, idx) {
     if (error) throw error;
     else {
       console.log(JSON.parse(body).name);
-      return print_char(person, ++idx);
+      return printChar(person, ++idx);
     }
   });
 }
